@@ -10,7 +10,7 @@ import java.util.List;
 
 @Service
 public class GreetingService implements GreetingInterface {
-public List<Greeting> greetingList;
+public static List<Greeting> greetingList;
 	
 	public GreetingService() {
 		greetingList = new ArrayList<>();
@@ -23,7 +23,10 @@ public List<Greeting> greetingList;
 		return greetingList;
 	}
 
-
+		public static Greeting findGreeting(long id) {
+		
+			return greetingList.stream().filter(n->n.getId()==id).findFirst().get();
+	}
 
 
 }
