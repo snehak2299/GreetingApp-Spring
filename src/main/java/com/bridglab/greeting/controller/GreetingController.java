@@ -18,4 +18,8 @@ public class GreetingController {
 		return new Greeting(counter.incrementAndGet(),String.format(template, name));
 		
 	}
+	@GetMapping("/start")
+	public String home() {
+		return "Hello world !!";
+	}
 }
