@@ -5,6 +5,7 @@ import com.bridglab.greeting.model.Greeting;
 public interface GreetingInterface {
 	public  List<Greeting> getGreeting() ;
 	public Greeting allGreeting(Greeting greetings);
+	public Greeting editGreeting(long parseLong, Greeting greetings);
 	
 	
 }

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -53,5 +54,9 @@ public class GreetingController {
 	@PostMapping("/save")   // UC6 show all greetings
 	public Greeting addGreeting(@RequestBody Greeting greetings) {
 		return this.greetingList.allGreeting(greetings);
+	}
+	@PutMapping("/save/{id}")  // UC7 edit greetings
+	public Greeting editGreeting(@PathVariable String id, @RequestBody Greeting greetings) {
+		return this.greetingList.editGreeting(Long.parseLong(id),greetings); 
 	}
 }

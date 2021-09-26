@@ -32,7 +32,17 @@ public static List<Greeting> greetingList;
 		greetingList.add(greetings);
 		return greetings;
 	}
-
-
+	@Override
+	public Greeting editGreeting(long id, Greeting greetings) {
+		Greeting greet=null;
+		for(Greeting greet1 : greetingList) {
+			if(greet1.getId()==id) {
+				greet1.setFirstName(greetings.getFirstName());
+				greet1.setLastName(greetings.getLastName());
+				break;
+			}
+		}
+		return greetings;
+	}
 
 }
