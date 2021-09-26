@@ -44,5 +44,9 @@ public static List<Greeting> greetingList;
 		}
 		return greetings;
 	}
+	public static void deleteGreeting(long id) {
+		greetingList.removeIf(n->n.getId()==id);
+		
+	}
 
 }

@@ -59,4 +59,10 @@ public class GreetingController {
 	public Greeting editGreeting(@PathVariable String id, @RequestBody Greeting greetings) {
 		return this.greetingList.editGreeting(Long.parseLong(id),greetings); 
 	}
+	@RequestMapping(method=RequestMethod.DELETE,value="/greeting/{id}")  //UC8 delete greeting by ID
+	public void deleteGretings(@PathVariable("id")long id) {
+		GreetingService.deleteGreeting(id);
+		
+		
+	}
 }
