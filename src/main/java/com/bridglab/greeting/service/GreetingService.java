@@ -23,10 +23,16 @@ public static List<Greeting> greetingList;
 		return greetingList;
 	}
 
-		public static Greeting findGreeting(long id) {
+	public static Greeting findGreeting(long id) {
 		
 			return greetingList.stream().filter(n->n.getId()==id).findFirst().get();
 	}
+	@Override
+	public Greeting allGreeting(Greeting greetings) {
+		greetingList.add(greetings);
+		return greetings;
+	}
+
 
 
 }
